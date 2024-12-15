@@ -8,19 +8,6 @@ def open_target(context):
     context.driver.get('https://www.target.com/')
 
 
-@when('Click on cart icon')
-def click_cart(context):
-    context.driver.find_element(By.XPATH, "//a[@data-test='@web/CartLink']").click()
-    sleep(2)
-
-
-@then('Verify if Cart Empty message is shown')
-def verify_cart_empty_message(context):
-    expected_text='Your cart is empty'
-    actual_text= context.driver.find_element(By.CSS_SELECTOR, "[data-test='boxEmptyMsg'] h1").text
-    assert expected_text == actual_text, f'Expected {expected_text} did not match actual {actual_text}'
-
-
 @when('Click Sign in')
 def click_sign_in(context):
     context.driver.find_element(By.XPATH, "//a[@data-test='@web/AccountLink']").click()
@@ -32,7 +19,7 @@ def click_right_side_nav_sign_in(context):
     context.driver.find_element(By.XPATH, "//a[@data-test='accountNav-signIn']").click()
 
 
-@then('Verify Sign In form opened')
+@then('Verify Sign into your Target account text is shown')
 def verify_sign_into_target_account(context):
     expected_text = 'Sign into your Target account'
     sleep(5)
