@@ -1,7 +1,7 @@
-from pages.base_page import Base_Page
+from pages.base_page import BasePage
 
 
-class MainPage(Base_Page):
+class MainPage(BasePage):
 
     def open_main(self):
         self.open('https://www.target.com/')

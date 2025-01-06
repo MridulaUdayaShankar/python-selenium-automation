@@ -5,6 +5,7 @@ Feature: Test cases for search
     Given Open target main page
     When Search for tea
     Then Verify that correct search results shown for {product}
+    Then Verify search term tea in URL
 
 Scenario: Verify that user can see product names and images
     Given Open target main page
