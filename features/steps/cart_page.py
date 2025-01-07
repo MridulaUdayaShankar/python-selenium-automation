@@ -31,8 +31,8 @@ def verify_product_name(context):
     print(f'Actual product in cart name: {actual_name}')
     #assert "Traditional Medicinals Organic Chamomile with Lavender Herbal Tea - 16ct" in actual_name, f"Expected {"Traditional Medicinals Organic Chamomile with Lavender Herbal Tea - 16ct"} but got {actual_name}"
     # assert context.product_name in actual_name, f"Expected {context.product_name} but got {actual_name}"
-    context.app.cart_page.verify_product_name(context.app.search_results_page.get_product_name())
-
+    # context.app.cart_page.verify_product_name(context.app.search_results_page.get_product_name())
+    context.app.cart_page.verify_product_name(context.product_name)
 
 @then('Verify cart has {amount} item(s)')
 def verify_cart_items(context, amount):
