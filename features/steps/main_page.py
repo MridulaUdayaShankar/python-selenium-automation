@@ -10,6 +10,15 @@ CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
 def open_main(context):
     context.app.main_page.open_main()
 
+
+@when('Click Sign in')
+def click_sign_in(context):
+    context.app.main_page.click_sign_in()
+
+@when('From right side navigation menu, click Sign in')
+def click_right_side_nav_sign_in(context):
+    context.app.main_page.click_right_side_nav_sign_in()
+
 def search_product(context, product):
     # context.driver.find_element(*SEARCH_FIELD).send_keys(product)
     # context.driver.find_element(*SEARCH_BTN).click()

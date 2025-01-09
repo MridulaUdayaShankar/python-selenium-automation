@@ -27,28 +27,28 @@ class BasePage:
 
 def wait_for_element_visible(self, *locator):
     return self.wait.until(
-        EC.visibility_of_element_located(locator),
+        EC.visibility_of_element_located(*locator),
         message=f'Element by {locator} not visible'
     )
 
 
 def wait_for_element_invisible(self, *locator):
     self.wait.until(
-        EC.invisibility_of_element_located(locator),
+        EC.invisibility_of_element_located(*locator),
         message=f'Element by {locator} should not be visible'
     )
 
 
 def wait_for_element_clickable(self, *locator):
     return self.wait.until(
-        EC.element_to_be_clickable(locator),
+        EC.element_to_be_clickable(*locator),
         message=f'Element by {locator} not clickable'
     )
 
 
 def wait_and_click(self, *locator):
     self.wait.until(
-        EC.element_to_be_clickable(locator),
+        EC.element_to_be_clickable(*locator),
         message=f'Element by {locator} not clickable'
     ).click()
 
